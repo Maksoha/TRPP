@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="ru.example.beautysalon.ui.view.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_serviceFragment"
+            app:destination="@id/serviceFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_specialistFragment"
+            app:destination="@id/specialistFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="ru.example.beautysalon.ui.view.booking.BookingFragment"
+        android:label="Выбор услуги"
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_navigation_booking_to_bookingFragment_SelectSpecialist"
+            app:destination="@id/bookingFragment_SelectSpecialist" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="ru.example.beautysalon.ui.view.map.MapsFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_maps"/>
+
+    <fragment
+        android:id="@+id/bookingFragment_SelectSpecialist"
+        android:name="ru.example.beautysalon.ui.view.booking.BookingFragment_SelectSpecialist"
+        android:label="Выбор специалиста"
+        tools:layout="@layout/fragment_booking_select_specialist" >
+        <action
+            android:id="@+id/action_bookingFragment_SelectSpecialist_to_bookingFragment_SelectDate"
+            app:destination="@id/bookingFragment_SelectDate" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment_SelectDate"
+        android:name="ru.example.beautysalon.ui.view.booking.BookingFragment_SelectDate"
+        android:label="Выбор даты"
+        tools:layout="@layout/fragment_booking_select_date" >
+        <action
+            android:id="@+id/action_bookingFragment_SelectDate_to_bookingFragment_confirmBooking"
+            app:destination="@id/bookingFragment_confirmBooking" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment_confirmBooking"
+        android:name="ru.example.beautysalon.ui.view.booking.BookingFragment_confirmBooking"
+        android:label="Подтверждение записи"
+        tools:layout="@layout/fragment_booking_confirm_booking" >
+        <action
+            android:id="@+id/action_bookingFragment_confirmBooking_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="ru.example.beautysalon.ui.view.home.NotificationFragment"
+        android:label="Уведомления"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/serviceFragment"
+        android:name="ru.example.beautysalon.ui.view.home.ServiceFragment"
+        android:label="Услуга"
+        tools:layout="@layout/fragment_service" >
+        <action
+            android:id="@+id/action_serviceFragment_to_specialistFragment"
+            app:destination="@id/specialistFragment" />
+        <action
+            android:id="@+id/action_serviceFragment_to_navigation_booking"
+            app:destination="@id/navigation_booking" />
+    </fragment>
+    <fragment
+        android:id="@+id/specialistFragment"
+        android:name="ru.example.beautysalon.ui.view.home.SpecialistFragment"
+        android:label="Специалист"
+        tools:layout="@layout/fragment_specialist" />
+
+</navigation>

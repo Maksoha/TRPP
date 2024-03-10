@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ru.example.beautysalon.ui.view.booking.BookingFragment_confirmBooking">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:id="@+id/CardViewService"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.CardView.ServiceConfirm"
+        app:contentPadding="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/CardViewService_icon_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/baseline_maps_home_work_24"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/CardViewService_header_location"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Услуга в салоне"
+                app:layout_constraintBottom_toBottomOf="@id/CardViewService_icon_location"
+                app:layout_constraintLeft_toRightOf="@id/CardViewService_icon_location"
+                app:layout_constraintTop_toTopOf="@id/CardViewService_icon_location" />
+
+            <TextView
+                android:id="@+id/CardViewService_address"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:text="Адрес"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_divider1"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_header_location" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/CardViewService_divider1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_serviceName"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_address" />
+
+            <TextView
+                android:id="@+id/CardViewService_serviceName"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="224dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:text="Название услуги"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_divider2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_divider1" />
+
+            <TextView
+                android:id="@+id/CardViewService_servicePrice"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Цена услуги"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_divider2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_divider1" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/CardViewService_divider2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_specialist_circle_avatar"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_serviceName" />
+
+            <ImageView
+                android:id="@+id/CardViewService_specialist_circle_avatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_avatar"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_divider3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/CardViewService_divider2" />
+
+            <TextView
+                android:id="@+id/CardViewService_text_avatar"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textColor="@color/surface"
+                app:layout_constraintBottom_toBottomOf="@id/CardViewService_specialist_circle_avatar"
+                app:layout_constraintLeft_toLeftOf="@id/CardViewService_specialist_circle_avatar"
+                app:layout_constraintRight_toRightOf="@id/CardViewService_specialist_circle_avatar"
+                app:layout_constraintTop_toTopOf="@id/CardViewService_specialist_circle_avatar" />
+
+            <TextView
+                android:id="@+id/CardViewService_specialist_name"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Имя"
+                android:textColor="@color/onSurface"
+                app:layout_constraintLeft_toRightOf="@id/CardViewService_specialist_circle_avatar"
+                app:layout_constraintTop_toTopOf="@id/CardViewService_specialist_circle_avatar" />
+
+            <TextView
+                android:id="@+id/CardViewService_specialist_speciality"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Специальность"
+                android:textColor="@color/onSurface"
+                app:layout_constraintLeft_toLeftOf="@id/CardViewService_specialist_name"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_specialist_name" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/CardViewService_divider3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_date"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_specialist_circle_avatar" />
+
+            <TextView
+                android:id="@+id/CardViewService_date"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Число месяц, день недели"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_time"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_divider3" />
+
+            <TextView
+                android:id="@+id/CardViewService_time"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Время, длительность услуги"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_divider4"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_date" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/CardViewService_divider4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_comment_header"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_time" />
+
+            <TextView
+                android:id="@+id/CardViewService_comment_header"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Комментарий"
+                app:layout_constraintBottom_toTopOf="@id/CardViewService_comment"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_divider4" />
+
+            <EditText
+                android:id="@+id/CardViewService_comment"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Необязательно"
+                android:paddingTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CardViewService_comment_header" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/CardViewService"
+            android:id="@+id/textField_name"
+            style="@style/Widget.Material3.TextInputEditText.FilledBox"
+            android:hint="Имя">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInput_name"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textField_name"
+            android:id="@+id/textField_phone"
+            style="@style/Widget.Material3.TextInputEditText.FilledBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInput_phone"
+                android:hint="Телефон"
+                android:text="+7"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="16sp"
+                android:maxLength="12"
+                android:imeOptions="actionNext"                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:id="@+id/buttonConfirm"
+            style="@style/Widget.Material3.Button"
+            app:layout_constraintTop_toBottomOf="@id/textField_phone"
+            android:text="Подтвердить запись"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
