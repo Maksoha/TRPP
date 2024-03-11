@@ -1,6 +1,5 @@
 package com.mirea.trpp.data.models;
 
-import ru.example.beautysalon.R;
 
 public class PhotoModel {
 
